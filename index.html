@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f0e8" media="(prefers-color-scheme:light)">
+<meta name="theme-color" content="#111714" media="(prefers-color-scheme:dark)">
+<title>阿发 × 阿夸｜南美旅行手册 2026</title>
+<style>
+:root{
+  --bg:#f4f0e8;--paper:#fffdf8;--ink:#17221c;--muted:#6f786f;--line:#d8d3c7;
+  --green:#2d6a4f;--green2:#74a57f;--orange:#df7b42;--blue:#4472a8;--red:#b95448;
+  --shadow:0 8px 26px rgba(50,46,38,.08);--radius:22px;
+}
+@media(prefers-color-scheme:dark){
+:root{--bg:#111714;--paper:#18201c;--ink:#edf3ed;--muted:#aab4ab;--line:#344039;--green:#78b991;--green2:#8bb797;--orange:#ef9a69;--blue:#83a8d6;--red:#e17f74;--shadow:none}
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif;line-height:1.55}
+a{color:inherit}.wrap{width:min(980px,100%);margin:auto;padding:18px 16px 70px}.hero{padding:22px 4px 12px}
+.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700}
+h1{font-size:clamp(30px,7vw,55px);line-height:1.03;margin:8px 0 10px;letter-spacing:-.04em}
+.subtitle{color:var(--muted);font-size:14px}.section{margin-top:22px}.section-title{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:0 3px 10px}
+.section-title h2{margin:0;font-size:20px}.section-title small{color:var(--muted)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.focus{padding:21px;overflow:hidden;position:relative}.focus:before{content:"";position:absolute;width:190px;height:190px;border:26px solid color-mix(in srgb,var(--green) 16%,transparent);border-radius:50%;right:-80px;top:-96px}
+.focus-top{font-size:13px;color:var(--muted);font-weight:700}.focus-event{font-size:22px;font-weight:800;margin-top:6px}.focus-meta{font-size:13px;color:var(--muted);margin-top:2px}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}.countdown div{padding:10px 6px;border-radius:14px;background:color-mix(in srgb,var(--green) 9%,transparent);text-align:center}
+.num{display:block;font-size:clamp(23px,7vw,42px);line-height:1;font-variant-numeric:tabular-nums;font-weight:850}.unit{font-size:11px;color:var(--muted)}
+.alert{margin-top:12px;border-left:4px solid var(--red);padding:12px 14px;background:color-mix(in srgb,var(--red) 9%,transparent);border-radius:10px;font-size:13px}
+.map-card{padding:10px;overflow:hidden}.map-card svg{width:100%;height:auto;display:block}.map-note{font-size:12px;color:var(--muted);padding:4px 9px 10px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;padding:0 10px 10px}.chip{font-size:11px;padding:5px 8px;border:1px solid var(--line);border-radius:999px}
+.grid{display:grid;gap:12px}.booking{padding:16px}.booking-head{display:flex;justify-content:space-between;gap:10px}.booking h3{font-size:16px;margin:0}.tag{font-size:11px;font-weight:750;padding:3px 7px;border-radius:99px;white-space:nowrap;background:color-mix(in srgb,var(--green) 12%,transparent);color:var(--green)}
+.tag.warn{background:color-mix(in srgb,var(--orange) 14%,transparent);color:var(--orange)}
+.rows{margin-top:10px;display:grid;gap:5px;font-size:13px}.label{color:var(--muted);display:inline-block;min-width:64px}.maplink{display:inline-flex;margin-top:10px;text-decoration:none;font-size:12px;border:1px solid var(--line);padding:7px 10px;border-radius:10px;font-weight:700}
+.day{margin-bottom:12px;overflow:hidden}.day>summary{list-style:none;padding:15px 16px;cursor:pointer;display:flex;align-items:center;gap:12px}.day>summary::-webkit-details-marker{display:none}
+.datebox{width:50px;height:50px;border-radius:14px;background:color-mix(in srgb,var(--green) 11%,transparent);display:grid;place-items:center;flex:none}.datebox b{font-size:18px;line-height:1}.datebox span{font-size:10px;color:var(--muted)}
+.daytitle{flex:1}.daytitle b{display:block}.daytitle small{color:var(--muted)}.chev{font-size:20px;color:var(--muted)}
+.daybody{padding:0 16px 16px;border-top:1px dashed var(--line)}.timeline{margin-top:12px}
+.trow{display:grid;grid-template-columns:70px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid color-mix(in srgb,var(--line) 65%,transparent)}.trow:last-child{border-bottom:0}.time{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}.content{font-size:13px}.content b{font-size:14px}
+.route-mini{margin-top:12px;padding:12px;border-radius:14px;background:color-mix(in srgb,var(--green) 5%,transparent)}.route-mini svg{width:100%;height:90px}.route-actions{display:flex;gap:8px;flex-wrap:wrap}.btn{font-size:12px;font-weight:750;text-decoration:none;border:1px solid var(--line);padding:7px 10px;border-radius:10px}
+.todo,.tips{padding:16px}.plainlist{margin:0;padding-left:19px}.plainlist li{margin:9px 0}.risk{color:var(--red);font-weight:700}.note{color:var(--muted);font-size:12px}
+footer{text-align:center;color:var(--muted);font-size:11px;margin-top:28px;padding:20px 0}
+@media(min-width:720px){.grid.cols{grid-template-columns:repeat(2,1fr)}.wrap{padding-top:30px}.booking{padding:18px}.trow{grid-template-columns:95px 1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="kicker">South America · Sep 2026</div>
+  <h1>阿发 × 阿夸<br>南美旅行手册</h1>
+  <div class="subtitle">上海 → 智利 → 巴塔哥尼亚 → 火地岛 → 阿根廷 → 上海</div>
+</header>
+
+<section class="section">
+  <div class="section-title"><h2>此刻关注</h2><small id="nowLocal"></small></div>
+  <div class="card focus">
+    <div class="focus-top">NEXT · 下一件确定行程</div>
+    <div class="focus-event" id="nextEvent">AF111 上海 → 巴黎</div>
+    <div class="focus-meta" id="nextMeta">2026/09/08 00:20 · 上海时间 UTC+8 · PVG</div>
+    <div class="countdown">
+      <div><span class="num" id="dd">--</span><span class="unit">天</span></div>
+      <div><span class="num" id="hh">--</span><span class="unit">时</span></div>
+      <div><span class="num" id="mm">--</span><span class="unit">分</span></div>
+      <div><span class="num" id="ss">--</span><span class="unit">秒</span></div>
+    </div>
+    <div class="alert"><b>行前冲突：</b>此前航班截图整理记录显示 AF528 可能在 9/8 晚抵达圣地亚哥，但目前已确认的 Mercure 酒店为 9/9–9/10。出发前必须以电子客票再次核对到达日期；若确为 9/8，需要补 9/8 当晚住宿。</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title"><h2>行程总览</h2><small>手绘路线 · 非比例地图</small></div>
+  <div class="card map-card">
+    <svg viewBox="0 0 900 500" role="img" aria-label="南美行程路线示意图">
+      <defs><filter id="rough"><feTurbulence baseFrequency=".018" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2"/></filter></defs>
+      <path d="M178 85 C260 110,260 162,335 170 S475 155,510 250 S520 350,575 390 S670 425,735 360" fill="none" stroke="var(--green)" stroke-width="7" stroke-linecap="round" stroke-dasharray="13 10" filter="url(#rough)"/>
+      <path d="M510 250 C445 292,415 330,450 374" fill="none" stroke="var(--orange)" stroke-width="7" stroke-linecap="round" filter="url(#rough)"/>
+      <path d="M450 374 C520 402,590 420,646 408" fill="none" stroke="var(--blue)" stroke-width="7" stroke-linecap="round" filter="url(#rough)"/>
+      <path d="M646 408 C678 388,700 366,735 360" fill="none" stroke="var(--red)" stroke-width="7" stroke-linecap="round" filter="url(#rough)"/>
+      <g fill="var(--paper)" stroke="var(--ink)" stroke-width="3">
+        <circle cx="178" cy="85" r="9"/><circle cx="335" cy="170" r="9"/><circle cx="510" cy="250" r="9"/>
+        <circle cx="450" cy="374" r="9"/><circle cx="575" cy="390" r="9"/><circle cx="646" cy="408" r="9"/><circle cx="735" cy="360" r="9"/>
+      </g>
+      <g fill="var(--ink)" font-size="18" font-weight="700">
+        <text x="125" y="62">上海</text><text x="285" y="145">圣地亚哥</text><text x="526" y="235">Puerto Natales</text>
+        <text x="335" y="402">Puerto Montt</text><text x="535" y="365">Ushuaia</text><text x="603" y="445">El Chaltén</text><text x="748" y="347">Buenos Aires</text>
+      </g>
+      <g fill="var(--muted)" font-size="13">
+        <text x="286" y="190">9/9 Mercure</text><text x="524" y="270">9/10–13 Loft By Toore</text>
+        <text x="334" y="424">9/13–15 Gran Pacífico</text><text x="532" y="386">9/23–25</text><text x="604" y="465">9/25–28</text><text x="746" y="368">9/29–30</text>
+      </g>
+    </svg>
+    <div class="legend"><span class="chip">✈ 航班</span><span class="chip">🚗 自驾</span><span class="chip">🚢 邮轮</span><span class="chip">🥾 徒步</span></div>
+    <div class="map-note">路线用于旅行手册快速理解；真正导航请点击每天的 Google Maps 按钮。</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title"><h2>已确认预订</h2><small>公开页已隐藏确认号 / 证件号 / 房号</small></div>
+  <div class="grid cols">
+    <div class="card booking"><div class="booking-head"><h3>✈ AF111 · 上海 → 巴黎</h3><span class="tag">已出票</span></div>
+      <div class="rows"><div><span class="label">出发</span>9/8 00:20 · PVG · UTC+8</div><div><span class="label">到达</span>9/8 07:55 · CDG · UTC+2</div></div>
+    </div>
+    <div class="card booking"><div class="booking-head"><h3>✈ AF528 · 巴黎 → 圣地亚哥</h3><span class="tag warn">核对日期</span></div>
+      <div class="rows"><div><span class="label">出发</span>此前记录 9/8 13:25 · CDG · UTC+2</div><div><span class="label">到达</span>此前记录约 21:00 · SCL · 智利当地时间</div></div>
+    </div>
+    <div class="card booking"><div class="booking-head"><h3>🏨 Mercure Santiago Centro</h3><span class="tag">已订</span></div>
+      <div class="rows"><div><span class="label">住宿</span>9/9 → 9/10</div><div><span class="label">地址</span>Av. Libertador Bernardo O’Higgins 632, Santiago</div><div><span class="label">电话</span>+56 2 2595 6622</div></div>
+      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Mercure+Santiago+Centro" target="_blank">↗ Google 地图</a>
+    </div>
+    <div class="card booking"><div class="booking-head"><h3>✈ H22613 · Santiago → Puerto Natales</h3><span class="tag">已出票</span></div>
+      <div class="rows"><div><span class="label">航班</span>9/10 10:01 → 14:49 · 经 Puerto Montt 停留约 55 分</div><div><span class="label">时区</span>智利当地时间 · UTC−3（行程期）</div></div>
+    </div>
+    <div class="card booking"><div class="booking-head"><h3>🚗 Econorent · Puerto Natales</h3><span class="tag">已确认</span></div>
+      <div class="rows"><div><span class="label">取车</span>9/10 15:00 · Puerto Natales Airport</div><div><span class="label">车型</span>Subaru Crosstrek AT 类别（具体车型以现场为准）</div><div><span class="label">提醒</span>航班 14:49 落地后仅 11 分钟到预订取车时间，实际提车会晚于 15:00，建议提前知会门店。</div></div>
+    </div>
+    <div class="card booking"><div class="booking-head"><h3>🏨 Loft By Toore Patagonia</h3><span class="tag">已订</span></div>
+      <div class="rows"><div><span class="label">住宿</span>9/10 → 9/13</div><div><span class="label">地址</span>Miguel Sánchez 17, Puerto Natales</div><div><span class="label">电话</span>+56 9 9744 9612</div></div>
+      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Loft+By+Toore+Patagonia+Puerto+Natales" target="_blank">↗ Google 地图</a>
+    </div>
+    <div class="card booking"><div class="booking-head"><h3>🎟 Full Day Patagonia Tour</h3><span class="tag">已支付</span></div>
+      <div class="rows"><div><span class="label">日期</span>9/12 · 阿发 + 阿夸</div><div><span class="label">项目</span>百内景观一日游 · 重点看 Cuernos</div><div><span class="label">已支付</span>向导费 USD 103</div></div>
+    </div>
+    <div class="card booking"><div class="booking-head"><h3>✈ H22616 · Puerto Natales → Puerto Montt</h3><span class="tag">已出票</span></div>
+      <div class="rows"><div><span class="label">时间</span>9/13 15:45 → 17:37</div><div><span class="label">时区</span>智利当地时间 · UTC−3</div></div>
+    </div>
+    <div class="card booking"><div class="booking-head"><h3>🏨 Hotel Gran Pacífico</h3><span class="tag">已订</span></div>
+      <div class="rows"><div><span class="label">住宿</span>9/13 → 9/15</div><div><span class="label">地址</span>Urmeneta 719, Puerto Montt</div><div><span class="label">电话</span>+56 65 248 2100</div><div><span class="label">入住</span>15:00 / 退房 12:00</div></div>
+      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Hotel+Gran+Pacifico+Puerto+Montt" target="_blank">↗ Google 地图</a>
+    </div>
+    <div class="card booking"><div class="booking-head"><h3>🚢 Patagonia & Chilean Fjords</h3><span class="tag">已订</span></div>
+      <div class="rows"><div><span class="label">登船</span>9/15 · Puerto Montt · 15:00–16:00</div><div><span class="label">下船</span>9/23 · Ushuaia</div><div><span class="label">航程</span>9天8晚</div></div>
+    </div>
+    <div class="card booking"><div class="booking-head"><h3>✈ AR1899 · Ushuaia → El Calafate</h3><span class="tag">已出票</span></div>
+      <div class="rows"><div><span class="label">时间</span>9/25 16:55 → 18:15</div><div><span class="label">时区</span>Argentina · UTC−3</div></div>
+    </div>
+    <div class="card booking"><div class="booking-head"><h3>🚗 El Calafate 租车</h3><span class="tag">已订</span></div>
+      <div class="rows"><div><span class="label">取车</span>9/25 19:00 · FTE Airport</div><div><span class="label">还车</span>9/28 19:00 · Av. del Libertador 1822, El Calafate</div><div><span class="label">车型</span>Citroën C3 VTi AT Feel PK MY25 或同级 · 自动挡 · 无限里程</div></div>
+      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Av.+del+Libertador+1822+El+Calafate" target="_blank">↗ 还车点</a>
+    </div>
+    <div class="card booking"><div class="booking-head"><h3>✈ AR1839 · El Calafate → Buenos Aires</h3><span class="tag">已出票</span></div>
+      <div class="rows"><div><span class="label">时间</span>9/29 08:20 → 11:20</div><div><span class="label">提醒</span>前一晚已在 El Calafate，早班机安排合理。</div></div>
+    </div>
+    <div class="card booking"><div class="booking-head"><h3>✈ AF471 + AF116 · 回上海</h3><span class="tag">已出票</span></div>
+      <div class="rows"><div><span class="label">AF471</span>9/30 23:55 Buenos Aires → 10/1 17:50 Paris</div><div><span class="label">AF116</span>10/1 23:30 Paris → 10/2 18:00 Shanghai</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>逐日行程</h2><small>点开每天查看路线</small></div>
+<div id="days"></div>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>待办清单</h2><small>不做浏览器勾选</small></div>
+<div class="card todo">
+<ul class="plainlist">
+<li class="risk">核对 AF528 的实际抵达“日期”，解决 Santiago 9/8 vs Mercure 9/9 入住的潜在空档。</li>
+<li>确认 Econorent Puerto Natales 取车门店已备注航班 H22613 14:49 抵达；15:00 准时取车不现实。</li>
+<li>确认 9/11 三塔徒步的百内国家公园门票 / 入园预约与当天道路、步道开放状态。</li>
+<li>确认 9/12 Full Day Patagonia Tour 是否已经包含百内门票；若不含，提前买。</li>
+<li>补齐 / 确认 Ushuaia 9/23–9/25、El Chaltén 9/25–9/28、El Calafate 9/28–9/29、Buenos Aires 9/29–9/30 的住宿订单。</li>
+<li>确认 9/25 FTE 取车门店对中国驾照 + 翻译件 / 国际驾照材料的最终要求。</li>
+<li>把邮轮最终登船码头、行李截止时间、证件要求写进手册。</li>
+<li>出发前下载离线地图：Santiago、Puerto Natales / Torres del Paine、Puerto Montt、Ushuaia、El Calafate / El Chaltén、Buenos Aires。</li>
+</ul>
+</div>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>实用贴士</h2></div>
+<div class="card tips">
+<ul class="plainlist">
+<li><b>时区：</b>上海 UTC+8；巴黎 9–10 月行程期通常 UTC+2；智利南部本次行程期按 UTC−3；阿根廷 UTC−3。页面倒计时使用绝对时间，不受你打开网页时所在国家影响。</li>
+<li><b>百内：</b>9 月仍是巴塔哥尼亚偏冷、风大、天气快速变化的季节。三塔日一定把“能不能按计划走”留给当天实际天气和公园管制决定。</li>
+<li><b>El Calafate → El Chaltén：</b>落地 18:15、19:00 取车后再夜间开往 El Chaltén 风险偏高；疲劳、横风、野生动物与天黑都会放大风险。页面暂时把它标为“谨慎执行”，不要把抵达时间卡死。</li>
+<li><b>导航：</b>地点按钮会唤起 Google Maps；离线状态下手册本身正常打开，但地图导航需要网络或提前下载离线区域。</li>
+<li><b>公开隐私：</b>本页不出现订单确认号、护照号、房号、邮箱等敏感信息。</li>
+</ul>
+</div>
+</section>
+<footer>阿发 × 阿夸 · South America 2026 · 单文件离线手册</footer>
+</div>
+
+<script>
+const E=[
+ {t:"2026-09-08T00:20:00+08:00",name:"AF111 上海 → 巴黎",meta:"2026/09/08 00:20 · 上海时间 UTC+8 · PVG"},
+ {t:"2026-09-10T10:01:00-03:00",name:"H22613 Santiago → Puerto Natales",meta:"2026/09/10 10:01 · 智利当地时间 UTC−3 · SCL"},
+ {t:"2026-09-13T15:45:00-03:00",name:"H22616 Puerto Natales → Puerto Montt",meta:"2026/09/13 15:45 · 智利当地时间 UTC−3 · PNT"},
+ {t:"2026-09-15T15:00:00-03:00",name:"Puerto Montt 邮轮登船",meta:"2026/09/15 15:00 · 智利当地时间 UTC−3"},
+ {t:"2026-09-25T16:55:00-03:00",name:"AR1899 Ushuaia → El Calafate",meta:"2026/09/25 16:55 · 阿根廷时间 UTC−3"},
+ {t:"2026-09-29T08:20:00-03:00",name:"AR1839 El Calafate → Buenos Aires",meta:"2026/09/29 08:20 · 阿根廷时间 UTC−3"},
+ {t:"2026-09-30T23:55:00-03:00",name:"AF471 Buenos Aires → Paris",meta:"2026/09/30 23:55 · 阿根廷时间 UTC−3"}
+];
+function tick(){
+ const now=new Date(), ev=E.find(x=>new Date(x.t)>now)||E[E.length-1];
+ document.querySelector("#nextEvent").textContent=ev.name;document.querySelector("#nextMeta").textContent=ev.meta;
+ let s=Math.max(0,Math.floor((new Date(ev.t)-now)/1000));
+ let d=Math.floor(s/86400);s%=86400;let h=Math.floor(s/3600);s%=3600;let m=Math.floor(s/60),sec=s%60;
+ dd.textContent=d;hh.textContent=String(h).padStart(2,"0");mm.textContent=String(m).padStart(2,"0");ss.textContent=String(sec).padStart(2,"0");
+ nowLocal.textContent=new Intl.DateTimeFormat("zh-CN",{dateStyle:"medium",timeStyle:"short",timeZoneName:"short"}).format(now);
+}
+tick();setInterval(tick,1000);
+
+const days=[
+["08","9月8日","上海 → 巴黎 → 圣地亚哥","飞行日",[["00:20","AF111 从上海浦东起飞","上海 UTC+8"],["07:55","抵达巴黎 CDG","巴黎 UTC+2"],["13:25","AF528 前往 Santiago","日期需以电子客票再次核对"],["晚间","抵达 Santiago","⚠ 与目前 Mercure 9/9 入住日期存在潜在冲突"]],["Shanghai Pudong International Airport","Charles de Gaulle Airport","Arturo Merino Benitez International Airport"]],
+["09","9月9日","Santiago","城市缓冲 / 酒店入住",[["白天","Santiago 城市活动","不安排过满，为长途飞行留恢复时间"],["入住","Mercure Santiago Centro","Av. Libertador Bernardo O’Higgins 632"]],["Mercure Santiago Centro","Plaza de Armas Santiago","Cerro Santa Lucia"]],
+["10","9月10日","Santiago → Puerto Natales","飞行 + 取车",[["10:01","H22613 起飞","SCL"],["14:49","抵达 Puerto Natales","PNT"],["15:00+","Econorent 取车","航班落地后不可能 11 分钟完成取车，按实际出机场时间"],["晚间","入住 Loft By Toore Patagonia","Miguel Sánchez 17"]],["Teniente Julio Gallardo Airport","Loft By Toore Patagonia Puerto Natales"]],
+["11","9月11日","Torres del Paine · 三塔","阿发徒步 / 阿夸自由活动",[["清晨","阿发出发前往百内","出发时间按天气、道路和公园开放状态决定"],["白天","Mirador Base Las Torres 往返","⚑ 需要提前确认公园票 / 入园要求"],["白天","阿夸 Puerto Natales 自由活动","可沿海滨和镇中心轻松活动"],["晚上","返回 Puerto Natales","不把返程时间卡死"]],["Loft By Toore Patagonia Puerto Natales","Torres del Paine Welcome Center","Mirador Base Las Torres"]],
+["12","9月12日","Torres del Paine · 景观日游","阿发 + 阿夸",[["全天","Full Day Patagonia Tour","重点：Cuernos / 湖区 / 经典景观点"],["提前","确认团费是否包含国家公园门票","⚑ 若不含，提前购买"]],["Puerto Natales","Mirador Cuernos Torres del Paine","Salto Grande Torres del Paine"]],
+["13","9月13日","Puerto Natales → Puerto Montt","退房 + 飞行",[["上午","Puerto Natales 收尾 / 还车安排","以租车订单还车时间为准"],["15:45","H22616 起飞","PNT"],["17:37","抵达 Puerto Montt","PMC"],["晚间","入住 Hotel Gran Pacífico","Urmeneta 719"]],["Teniente Julio Gallardo Airport","El Tepual International Airport","Hotel Gran Pacifico Puerto Montt"]],
+["14","9月14日","Puerto Montt","登船前缓冲日",[["全天","轻松活动 + 补给","优先处理邮轮行李、药品、零食、存储卡、电池"],["晚上","再次核对登船材料","证件、码头、15:00–16:00 登船窗口"]],["Hotel Gran Pacifico Puerto Montt","Puerto Montt"]],
+["15","9月15日","Puerto Montt · 登船","Patagonia & Chilean Fjords",[["12:00","Hotel Gran Pacífico 退房","酒店官方退房时间"],["15:00–16:00","邮轮登船","具体码头以最终船票为准"]],["Hotel Gran Pacifico Puerto Montt","Puerto Montt Port Chile"]],
+["16","9月16日","智利峡湾","Puyuhuapi Channel",[["全天","峡湾航行","留意海豚、鲸、海狮、水獭；实际活动听船方安排"]],["Puyuhuapi Chile"]],
+["17","9月17日","智利峡湾","Moraleda Channel",[["全天","Chonos 群岛 / San Rafael National Park 航段","以船方每日 briefing 为准"]],["Moraleda Channel Chile","Laguna San Rafael National Park Chile"]],
+["18–22","9月18–22日","Patagonia & Chilean Fjords","邮轮航行",[["每日","以船方 briefing 为绝对锚点","天气和海况可能改变登陆 / Zodiac / 航线"]],["Patagonia Chile"]],
+["23","9月23日","Ushuaia","下船",[["上午","Ushuaia 下船","具体时间以船方通知"],["之后","入住 / 城市活动","当前住宿订单待补入手册"]],["Ushuaia Argentina"]],
+["24","9月24日","Ushuaia","自由日",[["全天","城市 / 火地岛轻松活动","不安排强制长徒步，为次日飞行留余量"]],["Ushuaia Argentina","Tierra del Fuego National Park Argentina"]],
+["25","9月25日","Ushuaia → El Calafate → El Chaltén","飞行 + 取车",[["16:55","AR1899 起飞","USH"],["18:15","抵达 El Calafate","FTE"],["19:00","机场取车","Citroën C3 AT 或同级"],["晚间","计划自驾前往 El Chaltén","⚠ 夜间长途 + 疲劳风险，天气差时不建议硬开"]],["Ushuaia Airport","El Calafate Airport","El Chalten Argentina"]],
+["26","9月26日","El Chaltén","徒步日",[["全天","根据天气选徒步","Patagonia 天气优先于固定计划"]],["El Chalten Argentina","Laguna de los Tres Argentina"]],
+["27","9月27日","El Chaltén","徒步 / 机动日",[["全天","保留天气机动","好天气优先最想拍的路线"]],["El Chalten Argentina","Laguna Torre Argentina"]],
+["28","9月28日","El Chaltén → El Calafate","回程 + 还车",[["白天","从 El Chaltén 返回","预留横风 / 路况余量"],["19:00","市区还车","Av. del Libertador 1822, El Calafate"],["晚间","住 El Calafate","方便次日 08:20 航班"]],["El Chalten Argentina","Av. del Libertador 1822 El Calafate"]],
+["29","9月29日","El Calafate → Buenos Aires","飞行",[["08:20","AR1839 起飞","FTE"],["11:20","抵达 Buenos Aires","机场以电子客票为准"],["下午","Buenos Aires 城市活动","住宿待补入"]],["El Calafate Airport","Buenos Aires Argentina"]],
+["30","9月30日","Buenos Aires → Paris","返程",[["白天","Buenos Aires 最后半日","行李寄存 / 轻松活动"],["23:55","AF471 起飞","Buenos Aires → Paris"]],["Buenos Aires Argentina","Ezeiza International Airport"]],
+["01","10月1日","Paris 转机","返程",[["17:50","AF471 抵达 Paris","CDG · UTC+2"],["23:30","AF116 起飞","Paris → Shanghai"]],["Charles de Gaulle Airport"]],
+["02","10月2日","上海","回家",[["18:00","抵达上海","PVG · UTC+8"]],["Shanghai Pudong International Airport"]]
+];
+
+function mapsRoute(points){
+ return "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin="+encodeURIComponent(points[0])+"&destination="+encodeURIComponent(points[points.length-1])+(points.length>2?"&waypoints="+points.slice(1,-1).map(encodeURIComponent).join("%7C"):"");
+}
+function makeDay(d){
+ const [num,date,title,sub,rows,pts]=d;
+ const stopLabels=pts.map((p,i)=>`<text x="${50+i*(500/Math.max(1,pts.length-1))}" y="${i%2?70:35}" text-anchor="middle" fill="var(--muted)" font-size="10">${i+1}</text>`).join("");
+ const circles=pts.map((p,i)=>`<circle cx="${50+i*(500/Math.max(1,pts.length-1))}" cy="52" r="7" fill="var(--paper)" stroke="var(--green)" stroke-width="3"/>`).join("");
+ const poly=pts.length>1?`<line x1="50" y1="52" x2="550" y2="52" stroke="var(--green)" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 8"/>`:"";
+ return `<details class="card day">
+ <summary><div class="datebox"><b>${num}</b><span>${date.includes("10月")?"OCT":"SEP"}</span></div><div class="daytitle"><b>${title}</b><small>${sub}</small></div><div class="chev">⌄</div></summary>
+ <div class="daybody"><div class="timeline">${rows.map(r=>`<div class="trow"><div class="time">${r[0]}</div><div class="content"><b>${r[1]}</b><br><span class="note">${r[2]}</span></div></div>`).join("")}</div>
+ <div class="route-mini"><svg viewBox="0 0 600 90">${poly}${circles}${stopLabels}</svg><div class="route-actions">
+ <a class="btn" target="_blank" href="${mapsRoute(pts)}">↗ 打开全天多点导航</a>
+ ${pts.map((p,i)=>`<a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p)}">${i+1} · 地图</a>`).join("")}
+ </div></div></div></details>`;
+}
+document.querySelector("#days").innerHTML=days.map(makeDay).join("");
+</script>
+</body>
+</html>
