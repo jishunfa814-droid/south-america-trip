@@ -67,29 +67,85 @@ footer{text-align:center;color:var(--muted);font-size:11px;margin-top:28px;paddi
 </section>
 
 <section class="section">
-  <div class="section-title"><h2>行程总览</h2><small>手绘路线 · 非比例地图</small></div>
+  <div class="section-title"><h2>行程总览</h2><small>主要停留地 · 非比例地图</small></div>
   <div class="card map-card">
-    <svg viewBox="0 0 900 500" role="img" aria-label="南美行程路线示意图">
-      <defs><filter id="rough"><feTurbulence baseFrequency=".018" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2"/></filter></defs>
-      <path d="M178 85 C260 110,260 162,335 170 S475 155,510 250 S520 350,575 390 S670 425,735 360" fill="none" stroke="var(--green)" stroke-width="7" stroke-linecap="round" stroke-dasharray="13 10" filter="url(#rough)"/>
-      <path d="M510 250 C445 292,415 330,450 374" fill="none" stroke="var(--orange)" stroke-width="7" stroke-linecap="round" filter="url(#rough)"/>
-      <path d="M450 374 C520 402,590 420,646 408" fill="none" stroke="var(--blue)" stroke-width="7" stroke-linecap="round" filter="url(#rough)"/>
-      <path d="M646 408 C678 388,700 366,735 360" fill="none" stroke="var(--red)" stroke-width="7" stroke-linecap="round" filter="url(#rough)"/>
-      <g fill="var(--paper)" stroke="var(--ink)" stroke-width="3">
-        <circle cx="178" cy="85" r="9"/><circle cx="335" cy="170" r="9"/><circle cx="510" cy="250" r="9"/>
-        <circle cx="450" cy="374" r="9"/><circle cx="575" cy="390" r="9"/><circle cx="646" cy="408" r="9"/><circle cx="735" cy="360" r="9"/>
-      </g>
-      <g fill="var(--ink)" font-size="18" font-weight="700">
-        <text x="125" y="62">上海</text><text x="285" y="145">圣地亚哥</text><text x="526" y="235">Puerto Natales</text>
-        <text x="335" y="402">Puerto Montt</text><text x="535" y="365">Ushuaia</text><text x="603" y="445">El Chaltén</text><text x="748" y="347">Buenos Aires</text>
-      </g>
-      <g fill="var(--muted)" font-size="13">
-        <text x="286" y="190">9/9 Mercure</text><text x="524" y="270">9/10–13 Loft By Toore</text>
-        <text x="334" y="424">9/13–15 Gran Pacífico</text><text x="532" y="386">9/23–25</text><text x="604" y="465">9/25–28</text><text x="746" y="368">9/29–30</text>
+    <svg viewBox="0 0 920 500" role="img" aria-label="南美旅行主要停留地路线示意图">
+      <defs>
+        <filter id="rough"><feTurbulence baseFrequency=".016" numOctaves="2" seed="8" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/></filter>
+      </defs>
+
+      <!-- chronological route -->
+      <path d="M105 85 C165 92,220 112,280 150" fill="none" stroke="var(--green)" stroke-width="7" stroke-linecap="round" stroke-dasharray="14 10" filter="url(#rough)"/>
+      <path d="M280 150 C350 185,420 215,495 250" fill="none" stroke="var(--green)" stroke-width="7" stroke-linecap="round" stroke-dasharray="14 10" filter="url(#rough)"/>
+      <path d="M495 250 C515 280,530 300,548 315" fill="none" stroke="var(--green)" stroke-width="7" stroke-linecap="round" stroke-dasharray="14 10" filter="url(#rough)"/>
+      <path d="M548 315 C585 338,625 350,665 350 C710 350,750 333,785 310" fill="none" stroke="var(--blue)" stroke-width="9" stroke-linecap="round" stroke-dasharray="2 15" filter="url(#rough)"/>
+      <path d="M785 310 C750 338,715 360,675 380" fill="none" stroke="var(--green)" stroke-width="7" stroke-linecap="round" stroke-dasharray="14 10" filter="url(#rough)"/>
+      <path d="M675 380 C635 400,600 420,565 442" fill="none" stroke="var(--orange)" stroke-width="7" stroke-linecap="round" stroke-dasharray="10 8" filter="url(#rough)"/>
+      <path d="M565 442 C600 420,636 400,675 380" fill="none" stroke="var(--orange)" stroke-width="7" stroke-linecap="round" stroke-dasharray="10 8" filter="url(#rough)"/>
+      <path d="M675 380 C730 374,780 350,830 320" fill="none" stroke="var(--green)" stroke-width="7" stroke-linecap="round" stroke-dasharray="14 10" filter="url(#rough)"/>
+
+      <g font-family="-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif">
+        <g fill="var(--paper)" stroke="var(--ink)" stroke-width="3">
+          <circle cx="105" cy="85" r="12"/>
+          <circle cx="280" cy="150" r="12"/>
+          <circle cx="495" cy="250" r="12"/>
+          <circle cx="548" cy="315" r="12"/>
+          <circle cx="785" cy="310" r="12"/>
+          <circle cx="675" cy="380" r="12"/>
+          <circle cx="565" cy="442" r="12"/>
+          <circle cx="830" cy="320" r="12"/>
+        </g>
+
+        <g fill="var(--ink)" font-size="12" font-weight="800" text-anchor="middle" dominant-baseline="central">
+          <text x="105" y="85">1</text>
+          <text x="280" y="150">2</text>
+          <text x="495" y="250">3</text>
+          <text x="548" y="315">4</text>
+          <text x="785" y="310">5</text>
+          <text x="675" y="380">6</text>
+          <text x="565" y="442">7</text>
+          <text x="830" y="320">8</text>
+        </g>
+
+        <g fill="var(--ink)" font-size="18" font-weight="700">
+          <text x="55" y="58">上海</text>
+          <text x="226" y="126">Santiago</text>
+          <text x="430" y="225">Puerto Natales</text>
+          <text x="510" y="292">Puerto Montt</text>
+          <text x="744" y="285">Ushuaia</text>
+          <text x="615" y="358">El Calafate</text>
+          <text x="508" y="474">El Chaltén</text>
+          <text x="785" y="348">Buenos Aires</text>
+        </g>
+
+        <g fill="var(--muted)" font-size="13">
+          <text x="228" y="146">9/9</text>
+          <text x="431" y="245">9/10–13</text>
+          <text x="510" y="312">9/13–15</text>
+          <text x="744" y="305">9/23–25</text>
+          <text x="615" y="378">9/25 / 9/28–29</text>
+          <text x="507" y="491">9/25–28</text>
+          <text x="785" y="366">9/29–30</text>
+        </g>
       </g>
     </svg>
-    <div class="legend"><span class="chip">✈ 航班</span><span class="chip">🚗 自驾</span><span class="chip">🚢 邮轮</span><span class="chip">🥾 徒步</span></div>
-    <div class="map-note">路线用于旅行手册快速理解；真正导航请点击每天的 Google Maps 按钮。</div>
+
+    <div class="legend">
+      <span class="chip">上海</span>
+      <span class="chip">Santiago</span>
+      <span class="chip">Puerto Natales</span>
+      <span class="chip">Puerto Montt</span>
+      <span class="chip">Ushuaia</span>
+      <span class="chip">El Calafate</span>
+      <span class="chip">El Chaltén</span>
+      <span class="chip">Buenos Aires</span>
+    </div>
+    <div class="legend">
+      <span class="chip">✈ 航班</span>
+      <span class="chip">🚢 邮轮</span>
+      <span class="chip">🚗 自驾</span>
+    </div>
+    <div class="map-note">总览只保留主要停留地；三塔、百内等日间活动放在逐日行程里，不占总览地图。</div>
   </div>
 </section>
 
@@ -217,11 +273,15 @@ const days=[
 ["12","9月12日","Torres del Paine · 景观日游","阿发 + 阿夸",[["全天","Full Day Patagonia Tour","重点：Cuernos / 湖区 / 经典景观点"],["提前","确认团费是否包含国家公园门票","⚑ 若不含，提前购买"]],["Puerto Natales","Mirador Cuernos Torres del Paine","Salto Grande Torres del Paine"]],
 ["13","9月13日","Puerto Natales → Puerto Montt","退房 + 飞行",[["上午","Puerto Natales 收尾 / 还车安排","以租车订单还车时间为准"],["15:45","H22616 起飞","PNT"],["17:37","抵达 Puerto Montt","PMC"],["晚间","入住 Hotel Gran Pacífico","Urmeneta 719"]],["Teniente Julio Gallardo Airport","El Tepual International Airport","Hotel Gran Pacifico Puerto Montt"]],
 ["14","9月14日","Puerto Montt","登船前缓冲日",[["全天","轻松活动 + 补给","优先处理邮轮行李、药品、零食、存储卡、电池"],["晚上","再次核对登船材料","证件、码头、15:00–16:00 登船窗口"]],["Hotel Gran Pacifico Puerto Montt","Puerto Montt"]],
-["15","9月15日","Puerto Montt · 登船","Patagonia & Chilean Fjords",[["12:00","Hotel Gran Pacífico 退房","酒店官方退房时间"],["15:00–16:00","邮轮登船","具体码头以最终船票为准"]],["Hotel Gran Pacifico Puerto Montt","Puerto Montt Port Chile"]],
-["16","9月16日","智利峡湾","Puyuhuapi Channel",[["全天","峡湾航行","留意海豚、鲸、海狮、水獭；实际活动听船方安排"]],["Puyuhuapi Chile"]],
-["17","9月17日","智利峡湾","Moraleda Channel",[["全天","Chonos 群岛 / San Rafael National Park 航段","以船方每日 briefing 为准"]],["Moraleda Channel Chile","Laguna San Rafael National Park Chile"]],
-["18–22","9月18–22日","Patagonia & Chilean Fjords","邮轮航行",[["每日","以船方 briefing 为绝对锚点","天气和海况可能改变登陆 / Zodiac / 航线"]],["Patagonia Chile"]],
-["23","9月23日","Ushuaia","下船",[["上午","Ushuaia 下船","具体时间以船方通知"],["之后","入住 / 城市活动","当前住宿订单待补入手册"]],["Ushuaia Argentina"]],
+["15","9月15日","Puerto Montt · 登船","邮轮 Day 1",[["12:00","Hotel Gran Pacífico 退房","酒店官方退房时间"],["15:00–16:00","Puerto Montt 登船","办理登船手续，具体码头与集合要求以船方最终通知为准"],["傍晚","启航 · Patagonia Fjords","进入智利巴塔哥尼亚峡湾航段"]],["Hotel Gran Pacifico Puerto Montt","Puerto Montt Port Chile"]],
+["16","9月16日","Puyuhuapi Channel","邮轮 Day 2",[["全天","Puyuhuapi Channel 峡湾航行","以峡湾景观和野生动物观察为主，有机会看到海豚、鲸、海狮或水獭"],["机动","甲板观景 / 船上活动","活动安排受天气与海况影响，以当天 briefing 为准"]],["Puyuhuapi Chile"]],
+["17","9月17日","Moraleda Channel","邮轮 Day 3",[["全天","Moraleda Channel · Chonos 群岛","继续向南穿行群岛水道，进入 San Rafael National Park 一带航段"],["机动","可能的小艇 / 观景安排","是否实施取决于当天海况，不预设固定时间"]],["Moraleda Channel Chile","Laguna San Rafael National Park Chile"]],
+["18","9月18日","Gulf of Penas / Caleta Tortel","邮轮 Day 4",[["全天","Gulf of Penas 航段","穿越外海与峡湾交界区域"],["视情况","Caleta Tortel 一带","若天气和船方安排允许，可能靠近或安排相关活动；以当天通知为准"]],["Gulf of Penas Chile","Caleta Tortel Chile"]],
+["19","9月19日","Messier Channel / Pío XI Glacier","邮轮 Day 5",[["全天","Messier Channel · English Narrows","航行于狭窄峡道，是这一段很有代表性的峡湾地形"],["重点","Pío XI Glacier","当天的重要冰川观景目标；实际接近程度受冰况、天气和船方判断影响"]],["Messier Channel Chile","Pio XI Glacier Chile"]],
+["20","9月20日","Bernardo O’Higgins National Park","邮轮 Day 6",[["全天","Bernardo O’Higgins 国家公园","冰川与峡湾景观为主"],["视情况","Zodiac 小艇 / 冰川接近","可能安排 El Brujo、Amalia 或附近冰川活动；地点与时间以当天 briefing 为准"]],["Bernardo O'Higgins National Park Chile","Amalia Glacier Chile"]],
+["21","9月21日","Strait of Magellan / Tierra del Fuego","邮轮 Day 7",[["全天","麦哲伦海峡 · 火地岛","进入更南端水域，沿途以海峡、岛屿和野生动物观察为主"],["途中","Francisco Coloane Marine Park 一带","视航线和天气情况经过相关海域"]],["Strait of Magellan Chile","Francisco Coloane Marine Park Chile"]],
+["22","9月22日","Beagle Channel / Garibaldi Fjord","邮轮 Day 8",[["全天","Beagle Channel · Glacier Alley","接近乌斯怀亚前的重要景观航段，沿途可见多条冰川"],["重点","Garibaldi Fjord","是否深入及活动形式受天气、海况和船方安排影响"]],["Beagle Channel","Garibaldi Fjord Chile"]],
+["23","9月23日","Ushuaia","邮轮 Day 9 · 下船",[["上午","抵达 Ushuaia","办理下船；具体靠港与离船时间以船方最终通知为准"],["之后","Ushuaia 自由活动 / 入住","当天不安排过紧行程，给邮轮延误和下船流程留余量"]],["Ushuaia Argentina"]],
 ["24","9月24日","Ushuaia","自由日",[["全天","城市 / 火地岛轻松活动","不安排强制长徒步，为次日飞行留余量"]],["Ushuaia Argentina","Tierra del Fuego National Park Argentina"]],
 ["25","9月25日","Ushuaia → El Calafate → El Chaltén","飞行 + 取车",[["16:55","AR1899 起飞","USH"],["18:15","抵达 El Calafate","FTE"],["19:00","机场取车","Citroën C3 AT 或同级"],["晚间","计划自驾前往 El Chaltén","⚠ 夜间长途 + 疲劳风险，天气差时不建议硬开"]],["Ushuaia Airport","El Calafate Airport","El Chalten Argentina"]],
 ["26","9月26日","El Chaltén","徒步日",[["全天","根据天气选徒步","Patagonia 天气优先于固定计划"]],["El Chalten Argentina","Laguna de los Tres Argentina"]],
