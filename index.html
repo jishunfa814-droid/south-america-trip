@@ -56,7 +56,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;margin-top:28px;paddi
   <div class="card focus">
     <div class="focus-top">NEXT · 下一件确定行程</div>
     <div class="focus-event" id="nextEvent">AF111 上海 → 巴黎</div>
-    <div class="focus-meta" id="nextMeta">2026/09/08 00:20 · 上海时间 UTC+8 · PVG</div>
+    <div class="focus-meta" id="nextMeta">2026/09/08 21:30 · 上海时间 UTC+8 · PVG</div>
     <div class="countdown">
       <div><span class="num" id="dd">--</span><span class="unit">天</span></div>
       <div><span class="num" id="hh">--</span><span class="unit">时</span></div>
@@ -97,10 +97,10 @@ footer{text-align:center;color:var(--muted);font-size:11px;margin-top:28px;paddi
   <div class="section-title"><h2>已确认预订</h2><small>公开页已隐藏确认号 / 证件号 / 房号</small></div>
   <div class="grid cols">
     <div class="card booking"><div class="booking-head"><h3>✈ AF111 · 上海 → 巴黎</h3><span class="tag">已出票</span></div>
-      <div class="rows"><div><span class="label">出发</span>9/8 00:20 · PVG · UTC+8</div><div><span class="label">到达</span>9/8 07:55 · CDG · UTC+2</div></div>
+      <div class="rows"><div><span class="label">出发</span>9/8 21:30 · PVG · UTC+8</div><div><span class="label">到达</span>9/9 05:50 · CDG · UTC+2</div></div>
     </div>
     <div class="card booking"><div class="booking-head"><h3>✈ AF528 · 巴黎 → 圣地亚哥</h3><span class="tag">已出票</span></div>
-      <div class="rows"><div><span class="label">出发</span>9/8 · Paris CDG · UTC+2</div><div><span class="label">到达</span>9/9 · Santiago SCL · 智利当地时间</div></div>
+      <div class="rows"><div><span class="label">出发</span>9/9 10:15 · CDG · UTC+2</div><div><span class="label">到达</span>9/9 19:45 · SCL · 智利当地时间</div></div>
     </div>
     <div class="card booking"><div class="booking-head"><h3>🏨 Mercure Santiago Centro</h3><span class="tag">已订</span></div>
       <div class="rows"><div><span class="label">住宿</span>9/9 → 9/10</div><div><span class="label">地址</span>Av. Libertador Bernardo O’Higgins 632, Santiago</div><div><span class="label">电话</span>+56 2 2595 6622</div></div>
@@ -182,7 +182,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;margin-top:28px;paddi
 
 <script>
 const E=[
- {t:"2026-09-08T00:20:00+08:00",name:"AF111 上海 → 巴黎",meta:"2026/09/08 00:20 · 上海时间 UTC+8 · PVG"},
+ {t:"2026-09-08T21:30:00+08:00",name:"AF111 上海 → 巴黎",meta:"2026/09/08 21:30 · 上海时间 UTC+8 · PVG"},
  {t:"2026-09-10T10:01:00-03:00",name:"H22613 Santiago → Puerto Natales",meta:"2026/09/10 10:01 · 智利当地时间 UTC−3 · SCL"},
  {t:"2026-09-13T15:45:00-03:00",name:"H22616 Puerto Natales → Puerto Montt",meta:"2026/09/13 15:45 · 智利当地时间 UTC−3 · PNT"},
  {t:"2026-09-15T15:00:00-03:00",name:"Puerto Montt 邮轮登船",meta:"2026/09/15 15:00 · 智利当地时间 UTC−3"},
@@ -210,8 +210,8 @@ function tick(){
 try { tick(); setInterval(tick,1000); } catch(e) { console.error("Countdown error:", e); }
 
 const days=[
-["08","9月8日","上海 → 巴黎 → 圣地亚哥","长途飞行日",[["00:20","AF111 从上海浦东起飞","上海 UTC+8"],["07:55","抵达巴黎 CDG","巴黎 UTC+2"],["之后","巴黎转机，搭乘 AF528 前往 Santiago","跨日长途航班；9/9 抵达智利"]],["Shanghai Pudong International Airport","Charles de Gaulle Airport"]],
-["09","9月9日","抵达 Santiago","落地 + 酒店入住",[["抵达","AF528 抵达 Santiago SCL","智利当地时间；以电子客票上的准确时刻为准"],["之后","前往市区并入住 Mercure Santiago Centro","长途飞行后不把当天排满"],["余下时间","Santiago 轻松活动 / 休息","根据落地、入境和体力决定"]],["Arturo Merino Benitez International Airport","Mercure Santiago Centro","Plaza de Armas Santiago"]],
+["08","9月8日","上海 → 巴黎","长途飞行日",[["21:30","AF111 从上海浦东起飞","上海 UTC+8；9/9 抵达巴黎"]],["Shanghai Pudong International Airport","Charles de Gaulle Airport"]],
+["09","9月9日","巴黎 → Santiago","转机 + 抵达",[["05:50","AF111 抵达巴黎 CDG","巴黎 UTC+2"],["10:15","AF528 巴黎起飞","CDG · UTC+2"],["19:45","抵达 Santiago SCL","智利当地时间"],["之后","前往市区并入住 Mercure Santiago Centro","长途飞行后不把当天排满"]],["Charles de Gaulle Airport","Arturo Merino Benitez International Airport","Mercure Santiago Centro"]],
 ["10","9月10日","Santiago → Puerto Natales","飞行 + 取车",[["10:01","H22613 起飞","SCL"],["14:49","抵达 Puerto Natales","PNT"],["15:00+","Econorent 取车","航班落地后不可能 11 分钟完成取车，按实际出机场时间"],["晚间","入住 Loft By Toore Patagonia","Miguel Sánchez 17"]],["Teniente Julio Gallardo Airport","Loft By Toore Patagonia Puerto Natales"]],
 ["11","9月11日","Torres del Paine · 三塔","阿发徒步 / 阿夸自由活动",[["清晨","阿发出发前往百内","出发时间按天气、道路和公园开放状态决定"],["白天","Mirador Base Las Torres 往返","⚑ 需要提前确认公园票 / 入园要求"],["白天","阿夸 Puerto Natales 自由活动","可沿海滨和镇中心轻松活动"],["晚上","返回 Puerto Natales","不把返程时间卡死"]],["Loft By Toore Patagonia Puerto Natales","Torres del Paine Welcome Center","Mirador Base Las Torres"]],
 ["12","9月12日","Torres del Paine · 景观日游","阿发 + 阿夸",[["全天","Full Day Patagonia Tour","重点：Cuernos / 湖区 / 经典景观点"],["提前","确认团费是否包含国家公园门票","⚑ 若不含，提前购买"]],["Puerto Natales","Mirador Cuernos Torres del Paine","Salto Grande Torres del Paine"]],
