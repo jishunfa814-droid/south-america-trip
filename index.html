@@ -201,9 +201,13 @@ function tick(){
  document.getElementById("mm").textContent=String(m).padStart(2,"0");
  document.getElementById("ss").textContent=String(sec).padStart(2,"0");
  document.getElementById("nowLocal").textContent=
-   new Intl.DateTimeFormat("zh-CN",{dateStyle:"medium",timeStyle:"short",timeZoneName:"short"}).format(now);
+   new Intl.DateTimeFormat("zh-CN",{
+     year:"numeric",month:"numeric",day:"numeric",
+     hour:"2-digit",minute:"2-digit",
+     timeZoneName:"short"
+   }).format(now);
 }
-tick();setInterval(tick,1000);
+try { tick(); setInterval(tick,1000); } catch(e) { console.error("Countdown error:", e); }
 
 const days=[
 ["08","9月8日","上海 → 巴黎 → 圣地亚哥","长途飞行日",[["00:20","AF111 从上海浦东起飞","上海 UTC+8"],["07:55","抵达巴黎 CDG","巴黎 UTC+2"],["之后","巴黎转机，搭乘 AF528 前往 Santiago","跨日长途航班；9/9 抵达智利"]],["Shanghai Pudong International Airport","Charles de Gaulle Airport"]],
@@ -245,7 +249,13 @@ function makeDay(d){
  ${pts.map((p,i)=>`<a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p)}">${i+1} · 地图</a>`).join("")}
  </div></div></div></details>`;
 }
-document.getElementById("days").innerHTML=days.map(makeDay).join("");
+try {
+  document.getElementById("days").innerHTML=days.map(makeDay).join("");
+} catch(e) {
+  console.error("Daily itinerary render error:", e);
+  document.getElementById("days").innerHTML =
+    '<div class="card todo"><b>逐日行程加载失败</b><br><span class="note">请刷新页面。</span></div>';
+}
 </script>
 </body>
 </html>
