@@ -1,0 +1,43 @@
+name: Update flight times
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-flight-times.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch index.html
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          replacements = {
+            '2026/09/08 00:20 · 上海时间 UTC+8 · PVG': '2026/09/08 21:30 · 上海时间 UTC+8 · PVG',
+            '9/8 00:20 · PVG · UTC+8</div><div><span class="label">到达</span>9/8 07:55 · CDG · UTC+2': '9/8 21:30 · PVG · UTC+8</div><div><span class="label">到达</span>9/9 05:50 · CDG · UTC+2',
+            '9/8 · Paris CDG · UTC+2</div><div><span class="label">到达</span>9/9 · Santiago SCL · 智利当地时间': '9/9 10:15 · CDG · UTC+2</div><div><span class="label">到达</span>9/9 19:45 · SCL · 智利当地时间',
+            '2026-09-08T00:20:00+08:00': '2026-09-08T21:30:00+08:00',
+            '["08","9月8日","上海 → 巴黎 → 圣地亚哥","长途飞行日",[["00:20","AF111 从上海浦东起飞","上海 UTC+8"],["07:55","抵达巴黎 CDG","巴黎 UTC+2"],["之后","巴黎转机，搭乘 AF528 前往 Santiago","跨日长途航班；9/9 抵达智利"]],["Shanghai Pudong International Airport","Charles de Gaulle Airport"]],': '["08","9月8日","上海 → 巴黎","长途飞行日",[["21:30","AF111 从上海浦东起飞","上海 UTC+8；9/9 抵达巴黎"]],["Shanghai Pudong International Airport","Charles de Gaulle Airport"]],',
+            '["09","9月9日","抵达 Santiago","落地 + 酒店入住",[["抵达","AF528 抵达 Santiago SCL","智利当地时间；以电子客票上的准确时刻为准"],["之后","前往市区并入住 Mercure Santiago Centro","长途飞行后不把当天排满"],["余下时间","Santiago 轻松活动 / 休息","根据落地、入境和体力决定"]],["Arturo Merino Benitez International Airport","Mercure Santiago Centro","Plaza de Armas Santiago"]],': '["09","9月9日","巴黎 → Santiago","转机 + 抵达",[["05:50","AF111 抵达巴黎 CDG","巴黎 UTC+2"],["10:15","AF528 巴黎起飞","CDG · UTC+2"],["19:45","抵达 Santiago SCL","智利当地时间"],["之后","前往市区并入住 Mercure Santiago Centro","长途飞行后不把当天排满"]],["Charles de Gaulle Airport","Arturo Merino Benitez International Airport","Mercure Santiago Centro"]],'
+          }
+          for old, new in replacements.items():
+              s = s.replace(old, new)
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit update
+        run: |
+          git config user.name "chatgpt-web-updater"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Update AF111 and AF528 flight times"
+          git push
