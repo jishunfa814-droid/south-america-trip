@@ -192,11 +192,16 @@ const E=[
 ];
 function tick(){
  const now=new Date(), ev=E.find(x=>new Date(x.t)>now)||E[E.length-1];
- document.querySelector("#nextEvent").textContent=ev.name;document.querySelector("#nextMeta").textContent=ev.meta;
+ document.getElementById("nextEvent").textContent=ev.name;
+ document.getElementById("nextMeta").textContent=ev.meta;
  let s=Math.max(0,Math.floor((new Date(ev.t)-now)/1000));
  let d=Math.floor(s/86400);s%=86400;let h=Math.floor(s/3600);s%=3600;let m=Math.floor(s/60),sec=s%60;
- dd.textContent=d;hh.textContent=String(h).padStart(2,"0");mm.textContent=String(m).padStart(2,"0");ss.textContent=String(sec).padStart(2,"0");
- nowLocal.textContent=new Intl.DateTimeFormat("zh-CN",{dateStyle:"medium",timeStyle:"short",timeZoneName:"short"}).format(now);
+ document.getElementById("dd").textContent=d;
+ document.getElementById("hh").textContent=String(h).padStart(2,"0");
+ document.getElementById("mm").textContent=String(m).padStart(2,"0");
+ document.getElementById("ss").textContent=String(sec).padStart(2,"0");
+ document.getElementById("nowLocal").textContent=
+   new Intl.DateTimeFormat("zh-CN",{dateStyle:"medium",timeStyle:"short",timeZoneName:"short"}).format(now);
 }
 tick();setInterval(tick,1000);
 
@@ -240,7 +245,7 @@ function makeDay(d){
  ${pts.map((p,i)=>`<a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p)}">${i+1} · 地图</a>`).join("")}
  </div></div></div></details>`;
 }
-document.querySelector("#days").innerHTML=days.map(makeDay).join("");
+document.getElementById("days").innerHTML=days.map(makeDay).join("");
 </script>
 </body>
 </html>
