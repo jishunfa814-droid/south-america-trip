@@ -1,0 +1,32 @@
+name: Run travel guide v6 deploy
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    if: ${{ !contains(github.event.head_commit.message, '[deploy-v6]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore v6 index.html from payload
+        shell: bash
+        run: |
+          sed -n '/^H4sI/,/^PAYLOAD$/p' .github/workflows/deploy-v6.yml | sed '$d' | tr -d '\n' | base64 -d | gzip -d > index.html
+      - name: Commit v6
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "[deploy-v6] Publish travel guide v6"
+            git push
+          fi
