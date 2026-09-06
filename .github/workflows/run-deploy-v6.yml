@@ -14,10 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Restore v6 index.html from payload
+      - name: Restore v6 index.html from split payload
         shell: bash
         run: |
-          sed -n '/^H4sI/,/^PAYLOAD$/p' .github/workflows/deploy-v6.yml | sed '$d' | tr -d '\n' | base64 -d | gzip -d > index.html
+          cat .deploy-v6-payload/part00 .deploy-v6-payload/part01 .deploy-v6-payload/part02 .deploy-v6-payload/part03 | base64 -d | gzip -d > index.html
+          test "$(wc -c < index.html)" -eq 43970
       - name: Commit v6
         shell: bash
         run: |
@@ -30,5 +31,3 @@ jobs:
             git commit -m "[deploy-v6] Publish travel guide v6"
             git push
           fi
-
-# trigger
