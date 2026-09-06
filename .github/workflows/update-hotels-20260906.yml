@@ -1,0 +1,84 @@
+name: Update confirmed hotels 2026-09-06
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-hotels-20260906.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch index.html with confirmed hotels
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+
+          def rep(old, new, label):
+              global s
+              if old not in s:
+                  raise SystemExit(f'missing replacement target: {label}')
+              s = s.replace(old, new, 1)
+
+          # Map labels
+          rep('<text x="507" y="491">9/25–28</text><text x="785" y="366">9/29–30</text>',
+              '<text x="507" y="491">9/25–28 · Campo Base</text><text x="785" y="366">9/29–30 · Rosedal</text>',
+              'map hotel labels')
+
+          # Confirmed booking cards
+          old = '<div class="card booking"><div class="booking-head"><h3>🚗 El Calafate 租车</h3><span class="tag">已订</span></div><div class="rows"><div><span class="label">取车</span>9/25 19:00 · FTE Airport</div><div><span class="label">还车</span>9/28 19:00 · Av. del Libertador 1822, El Calafate</div><div><span class="label">车型</span>Citroën C3 VTi AT Feel PK MY25 或同级 · 自动挡 · 无限里程</div></div><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Av.+del+Libertador+1822+El+Calafate" target="_blank">↗ 还车点</a></div><div class="card booking"><div class="booking-head"><h3>✈ AR1839 · El Calafate → Buenos Aires</h3>'
+          new = '<div class="card booking"><div class="booking-head"><h3>🚗 El Calafate 租车</h3><span class="tag">已订</span></div><div class="rows"><div><span class="label">取车</span>9/25 19:00 · FTE Airport</div><div><span class="label">还车</span>9/28 19:00 · Av. del Libertador 1822, El Calafate</div><div><span class="label">车型</span>Citroën C3 VTi AT Feel PK MY25 或同级 · 自动挡 · 无限里程</div></div><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Av.+del+Libertador+1822+El+Calafate" target="_blank">↗ 还车点</a></div><div class="card booking"><div class="booking-head"><h3>🏨 Campo Base Aparts · El Chaltén</h3><span class="tag">已订</span></div><div class="rows"><div><span class="label">住宿</span>9/25 → 9/28 · 3晚</div><div><span class="label">金额</span>¥1,288.48</div><div><span class="label">地址</span>Av. Lago del Desierto 56, El Chaltén</div><div><span class="label">电话</span>+54 9 2944 601804</div></div><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Campo+Base+Aparts+El+Chalten" target="_blank">↗ Google 地图</a></div><div class="card booking"><div class="booking-head"><h3>✈ AR1839 · El Calafate → Buenos Aires</h3>'
+          rep(old, new, 'Campo Base booking card')
+
+          old = '<div class="card booking"><div class="booking-head"><h3>✈ AR1839 · El Calafate → Buenos Aires</h3><span class="tag">已出票</span></div><div class="rows"><div><span class="label">时间</span>9/29 08:20 → 11:20</div><div><span class="label">提醒</span>前一晚已在 El Calafate，早班机安排合理。</div></div></div><div class="card booking"><div class="booking-head"><h3>✈ AF471 + AF116 · 回上海</h3>'
+          new = '<div class="card booking"><div class="booking-head"><h3>✈ AR1839 · El Calafate → Buenos Aires</h3><span class="tag">已出票</span></div><div class="rows"><div><span class="label">时间</span>9/29 08:20 → 11:20</div><div><span class="label">提醒</span>前一晚已在 El Calafate，早班机安排合理。</div></div></div><div class="card booking"><div class="booking-head"><h3>🏨 Rosedal Suite · 洛赛德尔套房公寓</h3><span class="tag">已订</span></div><div class="rows"><div><span class="label">住宿</span>9/29 → 9/30 · 1晚</div><div><span class="label">金额</span>¥484.25</div><div><span class="label">地址</span>Godoy Cruz 2888, Buenos Aires</div><div><span class="label">电话</span>+54 11 6357-3686</div></div><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Rosedal+Suite+Godoy+Cruz+2888+Buenos+Aires" target="_blank">↗ Google 地图</a></div><div class="card booking"><div class="booking-head"><h3>✈ AF471 + AF116 · 回上海</h3>'
+          rep(old, new, 'Rosedal booking card')
+
+          # Todo: only Ushuaia and El Calafate remain
+          rep('补齐 / 确认 Ushuaia 9/23–9/25、El Chaltén 9/25–9/28、El Calafate 9/28–9/29、Buenos Aires 9/29–9/30 的住宿订单。',
+              '补齐 / 确认 Ushuaia 9/23–9/25、El Calafate 9/28–9/29 的住宿订单。',
+              'todo hotels')
+
+          # Daily itinerary
+          rep('["25","9月25日","Ushuaia → El Calafate → El Chaltén","飞行 + 取车",[["16:55","AR1899 起飞","USH"],["18:15","抵达 El Calafate","FTE"],["19:00","机场取车","Citroën C3 AT 或同级"],["晚间","计划自驾前往 El Chaltén","⚠ 夜间长途 + 疲劳风险，天气差时不建议硬开"]],["Ushuaia Airport","El Calafate Airport","El Chalten Argentina"]],',
+              '["25","9月25日","Ushuaia → El Calafate → El Chaltén","飞行 + 取车 + 已订住宿",[["16:55","AR1899 起飞","USH"],["18:15","抵达 El Calafate","FTE"],["19:00","机场取车","Citroën C3 AT 或同级"],["晚间","计划自驾前往 El Chaltén","⚠ 夜间长途 + 疲劳风险，天气差时不建议硬开"],["抵达后","入住 Campo Base Aparts","Av. Lago del Desierto 56；住宿已确认"]],["Ushuaia Airport","El Calafate Airport","Campo Base Aparts El Chalten"]],',
+              'day 25')
+          rep('["26","9月26日","El Chaltén","徒步日",[["全天","根据天气选徒步","Patagonia 天气优先于固定计划"]],["El Chalten Argentina","Laguna de los Tres Argentina"]],',
+              '["26","9月26日","El Chaltén","徒步日 · Campo Base Aparts",[["全天","根据天气选徒步","Patagonia 天气优先于固定计划"],["晚上","返回 Campo Base Aparts","住宿已确认"]],["Campo Base Aparts El Chalten","Laguna de los Tres Argentina"]],',
+              'day 26')
+          rep('["27","9月27日","El Chaltén","徒步 / 机动日",[["全天","保留天气机动","好天气优先最想拍的路线"]],["El Chalten Argentina","Laguna Torre Argentina"]],',
+              '["27","9月27日","El Chaltén","徒步 / 机动日 · Campo Base Aparts",[["全天","保留天气机动","好天气优先最想拍的路线"],["晚上","返回 Campo Base Aparts","最后一晚"]],["Campo Base Aparts El Chalten","Laguna Torre Argentina"]],',
+              'day 27')
+          rep('["28","9月28日","El Chaltén → El Calafate","回程 + 还车",[["白天","从 El Chaltén 返回","预留横风 / 路况余量"],["19:00","市区还车","Av. del Libertador 1822, El Calafate"],["晚间","住 El Calafate","方便次日 08:20 航班"]],["El Chalten Argentina","Av. del Libertador 1822 El Calafate"]],',
+              '["28","9月28日","El Chaltén → El Calafate","退房 + 回程 + 还车",[["上午","Campo Base Aparts 退房","结束 El Chaltén 3 晚住宿"],["白天","从 El Chaltén 返回","预留横风 / 路况余量"],["19:00","市区还车","Av. del Libertador 1822, El Calafate"],["晚间","住 El Calafate","9/28–9/29 住宿仍待补齐"]],["Campo Base Aparts El Chalten","Av. del Libertador 1822 El Calafate"]],',
+              'day 28')
+          rep('["29","9月29日","El Calafate → Buenos Aires","飞行",[["08:20","AR1839 起飞","FTE"],["11:20","抵达 Buenos Aires","机场以电子客票为准"],["下午","Buenos Aires 城市活动","住宿待补入"]],["El Calafate Airport","Buenos Aires Argentina"]],',
+              '["29","9月29日","El Calafate → Buenos Aires","飞行 + 已订住宿",[["08:20","AR1839 起飞","FTE"],["11:20","抵达 Buenos Aires","机场以电子客票为准"],["下午","入住 Rosedal Suite / 洛赛德尔套房公寓","Godoy Cruz 2888 · Palermo；住宿已确认"],["之后","Buenos Aires 城市活动","按体力轻松安排"]],["El Calafate Airport","Rosedal Suite Buenos Aires"]],',
+              'day 29')
+          rep('["30","9月30日","Buenos Aires → Paris","返程",[["白天","Buenos Aires 最后半日","行李寄存 / 轻松活动"],["23:55","AF471 起飞","Buenos Aires → Paris"]],["Buenos Aires Argentina","Ezeiza International Airport"]],',
+              '["30","9月30日","Buenos Aires → Paris","返程",[["上午","Rosedal Suite 退房","退房后安排寄存行李"],["白天","Buenos Aires 最后半日","轻松活动，不把返机场时间卡得太紧"],["23:55","AF471 起飞","Buenos Aires → Paris"]],["Rosedal Suite Buenos Aires","Ezeiza International Airport"]],',
+              'day 30')
+
+          # Tips
+          rep('<li><b>导航：</b>地点按钮会唤起 Google Maps；离线状态下手册本身正常打开，但地图导航需要网络或提前下载离线区域。</li>',
+              '<li><b>El Chaltén 住宿：</b>Campo Base Aparts 已确认 9/25–9/28；即使入住已定，9/25 是否当晚开过去仍以落地、取车和天气状态为准。</li><li><b>Buenos Aires：</b>9/29 已确认入住 Rosedal Suite（Palermo，Godoy Cruz 2888）；9/30 晚 23:55 才起飞，退房后记得安排寄存行李。</li><li><b>导航：</b>地点按钮会唤起 Google Maps；离线状态下手册本身正常打开，但地图导航需要网络或提前下载离线区域。</li>',
+              'tips hotels')
+
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit update
+        run: |
+          git config user.name "chatgpt-web-updater"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Add El Chalten and Buenos Aires hotel bookings"
+          git push
